@@ -1,0 +1,293 @@
+@import "var";
+
+.NavBg {
+  background: rgba(65, 84, 116, 0.15);
+}
+.ff1 {
+  font-family: "Noto Sans TC", sans-serif;
+}
+.ff2 {
+  font-family: "Noto Serif TC", serif;
+}
+.ff3 {
+  font-family: "Monoton", cursive;
+}
+.font1 {
+  font-size: 36px;
+  font-weight: 900;
+}
+.font2 {
+  font-size: 30px;
+  font-weight: 900;
+}
+.font3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.font4 {
+  font-size: 18px;
+  font-weight: 300;
+}
+.font5 {
+  font-size: 16px;
+  font-weight: 300;
+}
+.font6 {
+  font-size: 14px;
+  font-weight: 300;
+}
+.fc1 {
+  color: $color1;
+}
+.fc2 {
+  color: $color2;
+}
+.fc3 {
+  color: $color3;
+}
+.fc4 {
+  color: $color4;
+}
+.fc5 {
+  color: $color5;
+}
+
+// home-----------------------
+// home第一部分
+.homeOneAreaImgCenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.homeOneAreaImgBox {
+  width: 300px;
+  height: 300px;
+  background: url("http://localhost:3002/images/kaga.jpg") no-repeat top;
+  background-size: cover;
+  overflow: hidden;
+  // border-radius: 50%;
+}
+.homeOneAreaContentCenter {
+  width: 74%;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+.homeOneAreaContentSubTitle {
+  margin: 15px 0;
+  color: $color3;
+}
+// home第二部分
+.homeTwoAreaTitle {
+  background: $color2;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+.homeTwoAreaTitleText {
+  text-align: center;
+  color: $color5;
+}
+.homeTwoAreaProject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  color: $color1;
+}
+.homeTwoAreaProjectIcon {
+  text-align: center;
+  font-size: 50px;
+  color: $color4;
+}
+.homeTwoAreaFrontEndStep {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.homeTwoAreaFrontEndStep span {
+  color: $color3;
+  text-align: center;
+}
+
+// Portfolio-----------------------
+.PortfolioAreaOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $color4;
+  padding-bottom: 30px;
+}
+.PortfolioAreaOneTitle {
+  margin-top: 100px;
+  color: $color1;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $color1;
+  margin-bottom: 20px;
+}
+.ExpCardBox {
+  background: #fff;
+  width: 300px;
+  height: 450px;
+  margin: 5px auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 1px #bbb;
+}
+.ExpCardLogoBox {
+  width: 50%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.ExpCardContent {
+  color: $color1;
+  width: 80%;
+  text-align: center;
+}
+.ExpCardContent h3 {
+  color: $color1;
+  margin-top: 15px;
+}
+.ExpCardContent p {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.PortfolioAreaTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 0 0 40px 0;
+}
+.PortfolioAreaTwoTitle {
+  color: $color1;
+  margin-top: 30px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $color1;
+  margin-bottom: 20px;
+}
+
+.PflCardBox {
+  width: 300px;
+  height: 450px;
+  background: $color5;
+  border-radius: 20px;
+  overflow: hidden;
+  color: $color1;
+}
+.PflCardBoxImgBox {
+  height: 35%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.PflCardBoxContentBox {
+  padding: 10px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.PflCardBoxContentSubTitle {
+  margin-top: 15px;
+}
+// MediaQuery
+@media (min-width: 415px) and (max-width: 767px) {
+  // home第一部分
+  .homeOneAreaImgBox {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+  // home第一部分
+  .homeOneAreaImgBox {
+    width: 400px;
+    height: 400px;
+  }
+
+  // home第二部分
+  .homeTwoAreaProject {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+    color: $color1;
+  }
+  .homeTwoAreaProjectTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .homeTwoAreaProjectTitle h3 {
+    width: 70px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 961px) {
+  // home第一部分
+  .homeOneArea {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .homeOneAreaImgBox {
+    width: 400px;
+    height: 400px;
+  }
+  .homeOneAreaContentCenter {
+    width: 50%;
+    margin-left: 100px;
+    margin-top: 110px;
+    text-align: left;
+  }
+  .homeOneAreaContentCenter p {
+    width: 100%;
+  }
+  // home第二部分
+  .homeTwoAreaTitle {
+    margin-top: 20px;
+  }
+  .homeTwoAreaContent {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+  .homeTwoAreaProject {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    color: $color1;
+  }
+  .PortfolioAreaOne {
+  }
+  .PortfolioAreaOneContainer {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .PortfolioAreaTwoContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
