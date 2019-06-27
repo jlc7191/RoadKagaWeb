@@ -1,0 +1,581 @@
+@import 'var';
+
+input {
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 2px $color4;
+  padding-left: 5px;
+  width: 80%;
+}
+::placeholder {
+  color: #ddd;
+}
+textarea {
+  border-radius: 5px;
+  height: 200px;
+  border: none;
+  box-shadow: 0 0 2px $color4;
+  resize: none;
+  padding: 5px;
+}
+li {
+  list-style: none;
+}
+
+//齒輪
+.gearBox {
+  opacity: 0;
+  position: fixed;
+  left: -270px;
+  top: 40vh;
+  height: 500px;
+  width: 500;
+  z-index: -1;
+}
+.gearIcon {
+  font-size: 500px;
+  color: rgba(204, 204, 204, 0.4);
+}
+
+.mobileButton {
+  display: none;
+  opacity: 0;
+}
+//中間核心
+.Learn2Container {
+  width: 70%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+}
+
+//左側顯示區
+.messageView {
+  width: 60%;
+  height: 100vh;
+  background: rgba(204, 204, 204, 0.123);
+  padding: 80px 20px 0;
+  overflow: scroll;
+  transition: 2s;
+}
+.messageViewBox {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  margin: 20px 0;
+  overflow: hidden;
+  box-shadow: 0 2px 4px #aaa;
+  opacity: 1;
+  transition: 1s;
+}
+.messageViewBox.Out {
+  background: #000;
+  opacity: 0;
+}
+.messageViewBoxMain {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+.messageViewBoxFeedback {
+  border-top: 3px solid #fff;
+  padding: 15px 15px 15px 50px;
+  display: flex;
+  align-items: center;
+  background: rgba(117, 117, 117, 0.15);
+  transition: 1s;
+  opacity: 1;
+}
+.messageViewBoxFeedback.Out {
+  background: #000;
+  opacity: 0;
+}
+.messageViewBoxLeft {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.messageViewBoxTime p {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 10px;
+}
+.messageViewAweOrNot {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 13px;
+  background: #ccc;
+  margin-top: 7px;
+  transition: 0.5s;
+}
+.messageViewAweOrNot.aweOver {
+  background: rgba(32, 163, 43, 0.603);
+  font-weight: 900;
+  box-shadow: 0 0 2px #aaa;
+}
+.messageViewAweOrNot.booOver {
+  background: rgba(160, 43, 13, 0.603);
+  font-weight: 900;
+  box-shadow: 0 0 2px #aaa;
+}
+.fakeArea {
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  border-radius: 13px;
+  position: absolute;
+  top: 7px;
+}
+.aweBooBox {
+  width: 100%;
+  position: relative;
+}
+.messageViewFeedBack {
+  padding: 0 9px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 13px;
+  background: #ccc;
+  margin-top: 7px;
+}
+.messageViewFeedBack.Over {
+  background: rgba(182, 185, 3, 0.774);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 0 2px #aaa;
+}
+.messageViewAvatar {
+  width: 65px;
+  height: 64px;
+  border-radius: 50%;
+  background: $color4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.messageViewABB {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.messageViewBoxUL {
+  padding-left: 0;
+  margin-bottom: 0;
+  margin: 0 20px;
+  height: 100%;
+  width: 75%;
+}
+.messageViewEditIng {
+  padding: 3px 3px 3px 0;
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0);
+  align-items: center;
+  margin-top: 15px;
+  transition: 1.5s;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.messageViewEditIng.add {
+  padding: 3px 8px;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+}
+.messageViewEditButton {
+  cursor: pointer;
+  font-size: 10px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: none;
+  background: $color4;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.messageViewEditButton.Over {
+  background: $color1;
+  color: $color5;
+  font-weight: 900;
+}
+.messageViewBoxContent {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-all;
+}
+.messageViewEditDelArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.messageViewDelBox {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s;
+  cursor: pointer;
+}
+.messageViewDelBox.Over {
+  background: red;
+  box-shadow: 0 0 1px #aaa;
+  transform: scale(1.2) rotate(-1080deg);
+  color: $color5;
+}
+.messageViewEditBox {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4px;
+  margin-top: 7px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+.messageViewEditBox.Over {
+  background: green;
+  box-shadow: 0 0 1px #aaa;
+  transform: scale(1.2) rotate(1080deg);
+  color: $color5;
+}
+.cMessageViewEditDelArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 4px;
+}
+.cMessageViewDelBox {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background: #bbb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s;
+  cursor: pointer;
+}
+.cMessageViewDelBox.Over {
+  background: red;
+  box-shadow: 0 0 1px #aaa;
+  transform: scale(1.2) rotate(-1080deg);
+  color: $color5;
+}
+.cMessageViewEditBox {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background: #bbb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4px;
+  margin-top: 5px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+.cMessageViewEditBox.Over {
+  background: green;
+  box-shadow: 0 0 1px #aaa;
+  transform: scale(1.2) rotate(1080deg);
+  color: $color5;
+}
+
+//右側輸入區
+.messageInput {
+  width: 40%;
+  height: 100vh;
+  padding: 90px 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+.textMarginTop {
+  margin-top: 13px;
+}
+.avatarIconFlex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.avatarIconBox {
+  position: relative;
+}
+.avatarIconMouseOut {
+  margin-right: 10px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background: $color5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+.avatarIconMouseOver {
+  margin-right: 10px;
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+  background: $color4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+.avatarIconMouseOver.avatarIconChosen {
+  border: 4px solid $color3;
+}
+.avatarIconMouseOut.avatarIconChosen {
+  border: 4px solid $color3;
+}
+.campanySmallText {
+  margin-left: 5px;
+  color: rgba(255, 0, 0, 0.507);
+}
+.hideIconArea {
+  // icon選擇跟hover感應區 沒有這個  滑鼠滑到svg會出錯
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+.messageInputButtonOut {
+  background: $color5;
+  color: $color1;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: none;
+  width: 100px;
+  height: 40px;
+  transition: 1s;
+}
+.messageInputButtonOver {
+  background: $color2;
+  color: $color5;
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  transition: 1s;
+  border: none;
+}
+.feebackMessageInput {
+  width: 100%;
+  padding: 20px 5% 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .Learn2Container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .messageInput {
+    height: 100%;
+    width: 90%;
+    margin: 50px auto;
+  }
+  .messageView {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+  .feebackMessageInput {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 640px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .NavBg {
+    width: 100vw;
+    overflow: hidden;
+  }
+  .mobileButton {
+    position: fixed;
+    top: 50vh;
+    right: -40px;
+    opacity: 0.8;
+    width: 100px;
+    height: 100px;
+    background: $color4;
+    border: 5px double #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .mobileButton.red {
+    background: red;
+  }
+  .textback {
+    font-size: 18px;
+    font-weight: 900;
+    width: 40px;
+    margin-bottom: 0;
+    margin-right: 0;
+    line-height: 20px;
+    transition: 0.5s;
+    transform: translateX(0px);
+  }
+  .textback.hide {
+    transform: translateX(200px);
+  }
+  .goback {
+    opacity: 0;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 20px;
+    transform: translateX(200px) rotate(0);
+    transition: 1s;
+  }
+  .goback.show {
+    opacity: 1;
+    transform: translateX(-34px) rotate(2070deg);
+  }
+  .Learn2Container {
+    width: 100%;
+    height: 100%;
+  }
+  .messageView {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding-top: 80px;
+  }
+  .messageViewBox {
+    margin: 50px 0;
+    box-shadow: 0 5px 4px #aaa;
+  }
+
+  .messageInput {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: $color5;
+    background: rgba(51, 51, 51, 0.8);
+    height: 0;
+    width: 100%;
+    padding: 100px 20px;
+    margin-top: 0;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .messageInput.show {
+    height: 100%;
+    width: 100%;
+    display: block;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  .messageInput p {
+    display: none;
+  }
+  .messageInput small {
+    display: none;
+  }
+  .messageInput h3 {
+    color: white !important;
+  }
+  .messageInput input {
+    width: 100%;
+  }
+  .messageInput label {
+    display: block;
+    color: white !important;
+  }
+  .messageInput textarea {
+    display: block;
+    width: 100%;
+  }
+
+  .messageViewBoxMain {
+    flex-direction: column;
+  }
+  .messageViewEditIng {
+    margin: 3px 0;
+  }
+  .messageViewBoxTime p {
+    margin-top: 3px;
+  }
+  .messageViewBoxLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .messageViewAvatar {
+    width: 100px;
+    height: 100px;
+  }
+  .messageViewABB {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .aweBooBox {
+    width: 100px;
+  }
+  .messageViewAweOrNot {
+    width: 100%;
+  }
+  .messageViewFeedBack {
+    width: 100px;
+  }
+  .messageViewEditDelArea {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .messageViewEditBox {
+    margin-top: 0;
+    margin-left: 5px;
+  }
+
+  .messageViewBoxFeedback {
+    flex-direction: column;
+    padding-left: 15px;
+  }
+  .cMessageViewEditDelArea {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .cMessageViewEditBox {
+    margin-top: 0;
+    margin-left: 5px;
+  }
+}
