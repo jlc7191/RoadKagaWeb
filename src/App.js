@@ -42,7 +42,7 @@ const App = () => {
             >
               <img
                 className="h-100 w-100"
-                src="http://localhost:3002/images/logo.jpg"
+                src="https://0709-01.d1iweda6ndjxv8.amplifyapp.com/images/logo.jpg"
                 alt="logo"
               />
             </div>
